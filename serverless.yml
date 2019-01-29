@@ -1,0 +1,47 @@
+service:
+  name: comma
+
+plugins:
+  - serverless-workspaces
+  - serverless-webpack
+  - serverless-s3-local
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  endpointType: regional
+  memorySize: 128
+  timeout: 30
+  logRetentionInDays: 7
+  versionFunctions: false
+
+package:
+  excludeDevDependencies: true
+  individually: true
+
+custom:
+  webpack:
+    includeModules: true
+  s3:
+    host: 0.0.0.0
+    port: 8000
+    directory: ./.s3
+    cors: false
+  workspaces:
+    dashboard:
+      path: './services/dashboard'
+      service: ${file(./services/dashboard/service.yml)}
+    products:
+      path: './services/products'
+      service: ${file(./services/products/service.yml)}
+    store-front:
+      path: './services/store-front'
+      service: ${file(./services/store-front/service.yml)}
+
+resources:
+  Resources:
+    S3SharedBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: shared-bucket

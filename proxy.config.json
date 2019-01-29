@@ -1,0 +1,11 @@
+{
+  "rules": [
+    { "pathname": "/api/**", "dest": "http://0.0.0.0:9001" },
+    { "pathname": "/*/api/**", "dest": "http://0.0.0.0:9001" },
+    { "pathname": "/static/**", "dest": "http://0.0.0.0:9002" },
+    { "pathname": "/static/stores/**", "dest": "http://0.0.0.0:9003" },
+    { "pathname": "/dashboard**", "dest": "http://0.0.0.0:9004" },
+    { "pathname": "/*/dashboard**", "dest": "http://0.0.0.0:9004" },
+    { "dest": "http://0.0.0.0:9005" }
+  ]
+}

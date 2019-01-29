@@ -1,0 +1,13 @@
+service:
+  name: products
+
+functions:
+  default:
+    handler: ./services/products/handler.lambda
+    events:
+      - http:
+          method: any
+          path: /api/{apiVersion}/products/{proxy+}
+      - http:
+          method: any
+          path: /{storeId}/api/{apiVersion}/products/{proxy+}

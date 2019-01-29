@@ -1,0 +1,10 @@
+service:
+  name: store-front
+
+functions:
+  default:
+    handler: ./services/store-front/handler.lambda
+    events:
+      - http:
+          method: any
+          path: /{proxy+}

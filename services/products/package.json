@@ -1,0 +1,9 @@
+{
+  "name": "@comma/products",
+  "version": "0.1.0",
+  "description": "Comma E-Commerse products",
+  "author": "waitwing <waitingind@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,51 @@
+{
+  "name": "@comma/workspaces",
+  "version": "0.1.0",
+  "description": "Comma E-Commerse workspaces",
+  "repository": "git@github.com:waitwing/comma.git",
+  "author": "waitwing <waitingind@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "8",
+    "yarn": "^1.12.x"
+  },
+  "workspaces": [
+    "services/*",
+    "shared"
+  ],
+  "scripts": {
+    "dev:proxy": "micro-proxy --port 9000 --rules-file proxy.config.json",
+    "dev:api": "serverless offline --port 9001",
+    "dev:s3": "babel-node dev/s3-proxy.js",
+    "dev:static": "serve --listen 9003",
+    "dev:dashboard": "yarn workspace @comma/dashboard run dev --port 9004",
+    "dev:store-front": "yarn workspace @comma/store-front run dev --port 9005",
+    "dev": "concurrently --kill-others yarn:dev:*"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "babel-eslint": "9.0.0",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-module-resolver": "^3.1.3",
+    "concurrently": "^4.1.0",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-import-resolver-babel-module": "^5.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "http-proxy": "^1.17.0",
+    "js-yaml": "^3.12.1",
+    "lodash": "^4.17.11",
+    "micro-proxy": "^1.1.0",
+    "prettier": "^1.16.1",
+    "serve": "^10.1.1",
+    "serverless-offline": "^4.2.0",
+    "serverless-s3-local": "^0.3.22",
+    "serverless-webpack": "^5.2.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

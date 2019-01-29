@@ -1,0 +1,13 @@
+service:
+  name: dashboard
+
+functions:
+  default:
+    handler: ./services/dashboard/handler.lambda
+    events:
+      - http:
+          method: get
+          path: /dashboard/{proxy+}
+      - http:
+          method: get
+          path: /{storeId}/dashboard/{proxy+}

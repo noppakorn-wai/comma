@@ -1,0 +1,34 @@
+{
+  "name": "@comma/dashboard",
+  "version": "0.1.0",
+  "description": "Comma E-Commerse dashboard",
+  "author": "waitwing <waitingind@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development babel-node --config-file ./server/babel.config.js node_modules/.bin/micro-dev --silent --watch server/** server"
+  },
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "antd": "^3.13.0",
+    "micro": "^9.3.3",
+    "next": "^8.0.0-canary.15",
+    "next-plugin-transpile-modules": "^1.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "babel-plugin-emotion": "^10.0.6",
+    "babel-plugin-module-resolver": "^3.1.3",
+    "cross-env": "^5.2.0",
+    "eslint-import-resolver-babel-module": "^5.0.0",
+    "less": "^3.9.0",
+    "micro-dev": "^3.0.0",
+    "start-server-webpack-plugin": "^2.2.5",
+    "webpack": "^4.29.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
