@@ -243,6 +243,9 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/osx,node,windows,firebase,serverless,webstorm+all,visualstudiocode
 
+# serverless-s3-local
+.s3
+
 # serverless-webpack
 .webpack
 
